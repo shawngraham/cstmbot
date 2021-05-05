@@ -24,7 +24,11 @@ tweet <- paste(artifactNumber,generalDescription,contextFunction, sep=' ')
 imagedir <- randomFinds$results$imagedir
 image <- paste0(artifactNumber,'.aa.cs.thumb.png')
 imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/', URLencode(image))
-
+#if http_error is true, then the image URL is broken
+if (http_error(imageUrl)){
+  imageUrl <- paste0('https://ingeniumcanada.org/sites/default/files/styles/inline_image/public/2018-04/lighthouse_.jpg')
+  tweet <- paste(artifactNumber,generalDescription,contextFunction, "no image available", sep=' ')
+}
 
 temp_file <- tempfile()
 download.file(imageUrl, temp_file)
