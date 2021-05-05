@@ -26,7 +26,7 @@ image <- paste0(artifactNumber,'.aa.cs.thumb.png')
 imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/', URLencode(image))
 
 
-temp_file <- tempfile(fileext=".png")
+temp_file <- tempfile()
 download.file(imageUrl, temp_file)
 
 # post the tweet
