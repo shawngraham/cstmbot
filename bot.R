@@ -19,9 +19,10 @@ artifactNumber <- df$V1
 generalDescription <- df$V3
 contextFunction <- df$V17
 thumbnail <- df$V36
-tweet <- paste(artifactNumber,generalDescription,contextFunction, sep=' ')
+liveLink <- paste0('https://ingeniumcanada.org/ingenium/collection-research/collection-item.php?id=', artifactNumber)
 
-imagedir <- randomFinds$results$imagedir
+tweet <- paste(artifactNumber,generalDescription,contextFunction,liveLink, sep=' ')
+
 image <- paste0(artifactNumber,'.aa.cs.thumb.png')
 imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/', URLencode(image))
 #if http_error is true, then the image URL is broken
