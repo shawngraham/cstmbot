@@ -1,4 +1,4 @@
-name: findsbot
+name: cstmbot
 
 on:
   schedule:
@@ -10,9 +10,9 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Run findsbot manually'
+        description: 'Run cstmbot manually'
 jobs:
-  findsbot-post:
+  cstmbot-post:
     runs-on: macOS-latest
     env:
       TWITTER_CONSUMER_API_KEY: ${{ secrets.TWITTER_CONSUMER_API_KEY }}
