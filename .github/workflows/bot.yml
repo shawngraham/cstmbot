@@ -30,5 +30,9 @@ jobs:
         run: Rscript -e 'install.packages("jsonlite", dependencies = TRUE)'
       - name: Install digest package
         run: Rscript -e 'install.packages("digest", dependencies = TRUE)'
+      - name: Install urlshorteneR package
+        run: Rscript -e 'install.packages("urlshorteneR", dependencies = TRUE)'       
+        
+
       - name: Create and post tweet
         run: Rscript bot.R
