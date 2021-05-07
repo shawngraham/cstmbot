@@ -2,6 +2,7 @@ library(httr)
 library(rtweet)
 library(jsonlite)
 library(digest)
+library(urlshorteneR)
 
 # Create Twitter token
 findsbot_token <- rtweet::create_token(
@@ -19,9 +20,11 @@ artifactNumber <- df$V1
 generalDescription <- df$V3
 contextFunction <- df$V17
 thumbnail <- df$V36
-liveLink <- paste0('https://ingeniumcanada.org/ingenium/collection-research/collection-item.php?id=', artifactNumber)
 
-tweet <- paste(artifactNumber,generalDescription,contextFunction,liveLink, sep=' ')
+liveLink <- paste0('https://ingeniumcanada.org/ingenium/collection-research/collection-item.php?id=', artifactNumber)
+shortlink <- isgd_LinksShorten(longUrl = liveLink)
+
+tweet <- paste(artifactNumber,generalDescription,contextFunction,shortlink, sep=' ')
 
 image <- paste0(artifactNumber,'.aa.cs.thumb.png')
 imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/', URLencode(image))
