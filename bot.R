@@ -23,7 +23,7 @@ contextFunction <- df$V17
 thumbnail <- df$V36
 
 liveLink <- paste0('https://ingeniumcanada.org/ingenium/collection-research/collection-item.php?id=', artifactNumber)
-shortlink <- isgd_LinksShorten(longUrl = liveLink)
+shortlink <- vgd_LinksShorten(longUrl = liveLink)
 
 tweet <- paste(artifactNumber,generalDescription,contextFunction,shortlink, sep=' ')
 
