@@ -27,10 +27,10 @@ shortlink <- vgd_LinksShorten(longUrl = liveLink)
 
 tweet <- paste(artifactNumber,generalDescription,contextFunction,shortlink, sep=' ')
 
-#image <- paste0(artifactNumber,'.aa.cs.thumb.png')
-image <- paste0(thumbnail)
-#imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/', URLencode(image))
-imageUrl <- paste0(URLencode(image))
+image <- paste0(artifactNumber,'.aa.cs.thumb.png')
+#image <- paste0(thumbnail)
+imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/', URLencode(image))
+#imageUrl <- paste0(URLencode(image))
 
 #if http_error is true, then the image URL is broken
 if (http_error(imageUrl)){
