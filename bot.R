@@ -35,7 +35,7 @@ imageUrl <- paste0('http://source.techno-science.ca/artifacts-artefacts/images/'
 #if http_error is true, then the image URL is broken
 if (http_error(imageUrl)){
   imageUrl <- paste0('https://ingeniumcanada.org/sites/default/files/styles/inline_image/public/2018-04/lighthouse_.jpg')
-  tweet <- paste(artifactNumber,generalDescription,contextFunction, "no image available", sep=' ')
+  tweet <- paste(artifactNumber,generalDescription,contextFunction, "the bot couldn't find what it was looking for, how sad.", sep=' ')
 }
 
 temp_file <- tempfile()
